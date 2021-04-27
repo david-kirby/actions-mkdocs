@@ -1,0 +1,22 @@
+name: Run mkdocs
+runs:
+  using: docker
+  image: Dockerfile
+description: Run mkdocs to deploy docs to Github Pages
+author: david-kirby <david.kirby@cbsinteractive.com>
+branding:
+  icon: file-text
+  color: purple
+inputs:
+  mkdocs_file:
+    description: Full path to the mkdocs file
+    required: true
+    default: mkdocs.yml
+  dependency_file:
+    description: Full path to a requirements.txt or poetry.lock file containing any plugins, extensions, or themes to install
+    required: true
+    default: requirements.txt
+  verbose:
+    description: Enable verbose output for mkdocs
+    default: "false"
+    required: false
